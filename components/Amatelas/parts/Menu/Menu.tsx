@@ -5,6 +5,7 @@ import { MenuItem } from "./MenuItem";
 
 interface MenuItem {
   content: string;
+  key: string;
   active: boolean;
 }
 
