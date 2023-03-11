@@ -45,7 +45,7 @@ export const Menu = (props: MenuProps) => {
           return (
             <Link
               style={{ textDecoration: "none" }}
-              key={menuItem.key}
+              key={menuItem.content}
               href={`/${menuItem.content}`}
             >
               <MenuItem isActive={menuItem.active} st={{ padding: "4px 12px" }}>
