@@ -10,126 +10,127 @@ export const configurableAnimationProperties = [
 export type ConfigurableAnimationProperty =
   typeof configurableAnimationProperties[number];
 
+export const INITIAL_VAlUE = "initial-value"
 export const configurableCssPropertyDefaultValues = {
   display: {
     css: "display",
-    defaultValue: "block",
+    defaultValue: INITIAL_VAlUE,
   },
   flexDirection: {
     css: "flex-direction",
-    defaultValue: "row",
+    defaultValue: INITIAL_VAlUE,
   },
   gridAutoFlow: {
     css: "grid-auto-flow",
-    defaultValue: "row",
+    defaultValue: INITIAL_VAlUE,
   },
   gridTemplateAreas: {
     css: "grid-template-areas",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   gridTemplateRows: {
     css: "grid-template-rows",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   gridTemplateColumns: {
     css: "grid-template-columns",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   gridArea: {
     css: "grid-area",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   alignContent: {
     css: "align-content",
-    defaultValue: "normal",
+    defaultValue: INITIAL_VAlUE,
   },
   justifyContent: {
     css: "justify-content",
-    defaultValue: "normal",
+    defaultValue: INITIAL_VAlUE,
   },
   alignItems: {
     css: "align-items",
-    defaultValue: "normal",
+    defaultValue: INITIAL_VAlUE,
   },
   gap: {
     css: "gap",
-    defaultValue: "0",
+    defaultValue: INITIAL_VAlUE,
   },
   margin: {
     css: "margin",
-    defaultValue: "0",
+    defaultValue: INITIAL_VAlUE,
   },
   padding: {
     css: "padding",
-    defaultValue: "0",
+    defaultValue: INITIAL_VAlUE,
   },
   width: {
     css: "width",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   height: {
     css: "height",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   minHeight: {
     css: "min-height",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   maxHeight: {
     css: "max-height",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
   },
   fontSize: {
     css: "font-size",
-    defaultValue: "inherit",
+    defaultValue: INITIAL_VAlUE,
   },
   fontFamily: {
     css: "font-family",
-    defaultValue: "inherit",
+    defaultValue: INITIAL_VAlUE,
   },
   fontWeight: {
     css: "font-weight",
-    defaultValue: "inherit",
+    defaultValue: INITIAL_VAlUE,
   },
   color: {
     css: "color",
-    defaultValue: "inherit",
+    defaultValue: INITIAL_VAlUE,
   },
   backgroundColor: {
     css: "background-color",
-    defaultValue: "transparent",
+    defaultValue: INITIAL_VAlUE,
   },
   borderRadius: {
     css: "border-radius",
-    defaultValue: "0",
+    defaultValue: INITIAL_VAlUE,
   },
   border: {
     css: "border",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   borderTop: {
     css: "border-top",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   borderRight: {
     css: "border-right",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   borderBottom: {
     css: "border-bottom",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   borderLeft: {
     css: "border-left",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   outline: {
     css: "outline",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   transition: {
     css: "transition",
-    defaultValue: "none",
+    defaultValue: INITIAL_VAlUE,
   },
   textDecoration: {
     css: "text-decoration",
@@ -141,11 +142,55 @@ export const configurableCssPropertyDefaultValues = {
   },
   textAlign: {
     css: "text-align",
-    defaultValue: "left",
+    defaultValue: INITIAL_VAlUE,
   },
   cursor: {
     css: "cursor",
-    defaultValue: "auto",
+    defaultValue: INITIAL_VAlUE,
+  },
+  position: {
+    css: "position",
+    defaultValue: INITIAL_VAlUE,
+  },
+  top: {
+    css: "top",
+    defaultValue: INITIAL_VAlUE,
+  },
+  right: {
+    css: "right",
+    defaultValue: INITIAL_VAlUE,
+  },
+  bottom: {
+    css: "bottom",
+    defaultValue: INITIAL_VAlUE,
+  },
+  left: {
+    css: "left",
+    defaultValue: INITIAL_VAlUE,
+  },
+  zIndex: {
+    css: "z-index",
+    defaultValue: INITIAL_VAlUE,
+  },
+  overflowX: {
+    css: "overflow-x",
+    defaultValue: INITIAL_VAlUE,
+  },
+  overflowY: {
+    css: "overflow-y",
+    defaultValue: INITIAL_VAlUE,
+  },
+  transform: {
+    css: "transform",
+    defaultValue: INITIAL_VAlUE,
+  },
+  visibility: {
+    css: "visibility",
+    defaultValue: INITIAL_VAlUE,
+  },
+  opacity: {
+    css: "opacity",
+    defaultValue: INITIAL_VAlUE,
   },
 };
 export type ConfigurableCssProperty =
@@ -187,6 +232,7 @@ export type CursorProperties =
   | "not-allowed"
   | "zoom-in"
   | "grab";
+export type PositionProperties = "relative" | "absolute" | "fixed";
 
 export type MediaQueryable<T> = T | MediaQueryableProperty<T>;
 export interface MediaQueryableProperties {
@@ -224,5 +270,16 @@ export interface MediaQueryableProperties {
   listStyle?: MediaQueryable<string>;
   textAlign?: MediaQueryable<string>;
   cursor?: MediaQueryable<CursorProperties>;
+  position?: MediaQueryable<PositionProperties>;
+  top?: MediaQueryable<string>;
+  right?: MediaQueryable<string>;
+  bottom?: MediaQueryable<string>;
+  left?: MediaQueryable<string>;
+  zIndex?: MediaQueryable<string>;
+  overflowX?: MediaQueryable<string>;
+  overflowY?: MediaQueryable<string>;
+  transform?: MediaQueryable<string>;
+  visibility?: MediaQueryable<string>;
+  opacity?: MediaQueryable<string>;
 }
 export type St = MediaQueryableProperties;

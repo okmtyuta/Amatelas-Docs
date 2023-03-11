@@ -1,10 +1,13 @@
 import { logoImages } from "@okmtyuta/public/logo";
-import Image from "next/image";
 import colors from "../Amatelas/config/color";
 import { StBox, StImage, StLink, StSpan } from "../Amatelas/styled";
 import { StHeader } from "../Amatelas/styled/StHeader";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useRecoilState } from "recoil";
+import { isShowState } from "@okmtyuta/states/isShow";
 
 export const Header = () => {
+  const [isShow, setIsShow] = useRecoilState(isShowState);
   return (
     <StHeader>
       <StBox
@@ -15,6 +18,11 @@ export const Header = () => {
         }}
       >
         <StBox st={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <MenuIcon
+            onClick={() => {
+              setIsShow(true);
+            }}
+          />
           <StSpan
             st={{
               fontFamily: "anton",

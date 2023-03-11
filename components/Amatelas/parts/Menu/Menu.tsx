@@ -1,35 +1,18 @@
-import { useState } from "react";
+import Link from "next/link";
 import colors from "../../config/color";
-import { StBox, StList, StListItem, StSpan } from "../../styled";
+import { StBox, StList, StSpan } from "../../styled";
 import { MenuItem } from "./MenuItem";
 
-const menuItems = [
-  {
-    content: "overview",
-    key: crypto.randomUUID(),
-    active: true,
-  },
-  {
-    content: "installation",
-    key: crypto.randomUUID(),
-    active: false,
-  },
-  {
-    content: "usage",
-    key: crypto.randomUUID(),
-    active: false,
-  },
-];
+interface MenuItem {
+  content: string;
+  active: boolean;
+}
 
-export const Menu = () => {
-  const [menuItemStates, setMenuItemStates] = useState<
-    {
-      content: string;
-      key: string;
-      active: boolean;
-    }[]
-  >(menuItems);
+interface MenuProps {
+  menuItems: MenuItem[];
+}
 
+export const Menu = (props: MenuProps) => {
   return (
     <div>
       <StBox st={{ display: "flex", alignItems: "center", gap: "6px" }}>
@@ -58,32 +41,17 @@ export const Menu = () => {
           color: colors.lightCharColor,
         }}
       >
-        {menuItemStates.map((menuItem) => {
+        {props.menuItems.map((menuItem) => {
           return (
-            <MenuItem
+            <Link
+              style={{ textDecoration: "none" }}
               key={menuItem.key}
-              isActive={menuItem.active}
-              st={{ padding: "4px 12px" }}
-              onClick={() => {
-                setMenuItemStates(
-                  menuItemStates.map((menuItemEd) => {
-                    if (menuItem.key === menuItemEd.key) {
-                      return {
-                        ...menuItemEd,
-                        active: true,
-                      };
-                    }
-
-                    return {
-                      ...menuItemEd,
-                      active: false,
-                    };
-                  })
-                );
-              }}
+              href={`/${menuItem.content}`}
             >
-              {menuItem.content}
-            </MenuItem>
+              <MenuItem isActive={menuItem.active} st={{ padding: "4px 12px" }}>
+                {menuItem.content}
+              </MenuItem>
+            </Link>
           );
         })}
       </StList>
