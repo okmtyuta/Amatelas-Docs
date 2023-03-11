@@ -29,7 +29,7 @@ export const Menu = (props: MenuProps) => {
           AmUI
         </StSpan>
         <StSpan st={{ color: colors.themeColor, fontSize: "12px" }}>
-          Amatelas UI v0.0.1
+          Amatelas UI v0.0.2
         </StSpan>
       </StBox>
       <StBox st={{ margin: "0 0 6px 0" }}>Getting Started</StBox>
